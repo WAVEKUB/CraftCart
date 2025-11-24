@@ -133,6 +133,23 @@ java -jar target/*.jar
 
 The app will start on `http://localhost:8080` by default.
 
+### With Docker Compose
+
+1. **Configure Environment Variables:**
+   Copy `.env.example` to `.env` and update the values (especially `JWT_SECRETKEY` and passwords).
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Run the Application:**
+
+   ```bash
+   docker-compose up --build
+   ```
+
+   The app will be available at `http://localhost:8080`.
+
 ---
 
 ## API Overview

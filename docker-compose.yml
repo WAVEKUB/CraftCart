@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    container_name: cartcraft-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      # Override the URL to point to the mysqldb service instead of localhost
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/${DB_NAME}?allowPublicKeyRetrieval=true&useSSL=false
+      - JWT_SECRETKEY=${JWT_SECRETKEY}
+    networks:
+      - cartcraft-network
+
+  mysqldb:
+    image: mysql:8.0
+    container_name: cartcraft-db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cartcraft-network
+
+volumes:
+  mysql_data:
+
+
+networks:
+  cartcraft-network:
+    driver: bridge
