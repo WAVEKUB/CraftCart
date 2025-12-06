@@ -2,8 +2,6 @@
 
 Simple E-Commerce system built with Java and Maven.
 
-> 🚧 This project is a work in progress. Contributions and feedback are welcome!
-
 ---
 
 ## Table of Contents
