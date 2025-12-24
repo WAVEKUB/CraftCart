@@ -202,27 +202,6 @@ The app will start on `http://localhost:8080` by default.
 
 ---
 
-## Roadmap
-
-- [ ] User registration & JWT login
-- [ ] Payment gateway integration (sandbox)
-- [ ] Admin dashboard (products, orders, inventory)
-- [ ] Pagination, sorting, filtering
-- [ ] Observability (Spring Boot Actuator, logs, metrics)
-
----
-
-## Contributing
-
-1. Fork the repo and create a feature branch:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-2. Commit changes with clear messages and tests.
-3. Open a Pull Request with a summary of changes.
-
----
-
 ## License
 
 Add your preferred license (e.g., MIT) in `LICENSE` and reference it here.
