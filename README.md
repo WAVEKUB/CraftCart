@@ -16,8 +16,6 @@ Simple E-Commerce system built with Java and Maven.
 - [Testing](#testing)
 - [Common Tasks](#common-tasks)
 - [Troubleshooting](#troubleshooting)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
