@@ -104,3 +104,47 @@ This is a Spring Boot application providing the backend APIs for the CraftCart e
 | `POST` | `/order` | Place an order | Query: `userId` |
 | `GET` | `/order/{orderId}` | Get order by ID | - |
 | `GET` | `/{userId}/orders` | Get all orders of a user | - |
+
+## How to Run
+
+### Prerequisites
+- Java 24
+- MySQL 9.0 (if running locally)
+- Docker & Docker Compose (optional, for containerized execution)
+
+### Method 1: Using Docker Compose (Recommended)
+The easiest way to run the application along with the MySQL database is using Docker Compose. The `docker-compose.yml` file handles setting up the database and the backend app.
+
+1. Ensure Docker is running.
+2. Run the following command from the project root:
+   ```bash
+   docker-compose up --build -d
+   ```
+3. The backend API will be accessible at `http://localhost:8080`.
+
+To stop the application and database, run:
+```bash
+docker-compose down
+```
+
+### Method 2: Running Locally with Maven
+To run the application locally without Docker, you will need a running MySQL instance.
+
+1. Start your local MySQL server. Create a database for the application (default name is `craftcart`).
+2. The project uses an `.env` file for configuration. Verify or update the `.env` file in the root directory to match your local database credentials:
+   ```env
+   DB_NAME=craftcart
+   DB_USERNAME=root
+   DB_PASSWORD=your_password
+   JWT_SECRETKEY=your_secret_key
+   ```
+3. Run the Spring Boot application using the provided Maven wrapper:
+   **Windows:**
+   ```cmd
+   mvnw.cmd spring-boot:run
+   ```
+   **Mac/Linux:**
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+4. The API will be accessible at `http://localhost:8080`.
