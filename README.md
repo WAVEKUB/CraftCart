@@ -77,11 +77,13 @@ This is a Spring Boot application providing the backend APIs for the CraftCart e
 ### 6. Carts
 **Base Path:** `/api/v1/carts`
 
+> ⚠️ All cart endpoints require a valid JWT token. The cart is automatically resolved from the authenticated user.
+
 | Method | Endpoint | Description | Request / Params |
 |--------|----------|-------------|------------------|
-| `GET` | `/{cartId}/my-cart` | Get cart details | - |
-| `GET` | `/{cartId}/cart/total-price` | Get cart total price | - |
-| `DELETE` | `/{cartId}/clear` | Clear all items in cart | - |
+| `GET` | `/my-cart` | Get cart details (authenticated user) | - |
+| `GET` | `/total-price` | Get cart total price (authenticated user) | - |
+| `DELETE` | `/clear` | Clear all items in cart (authenticated user) | - |
 
 ---
 
